@@ -33,7 +33,7 @@
 window.addEventListener('DOMContentLoaded', () => {
             setInterval(() => {
                 alert("Please, Use Me...")
-            }, 30000) // temps en ms
+            }, 30000) // temps en ms 30000ms = 30 Secondes
             let submit = document.getElementById("submit");
             submit.addEventListener("click", function() {
                 const gauche = document.getElementById("gauche").value;
@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     alert("It’s over 9000!");
                     return console.log("It’s over 9000!");
                 }
-                alert(eval(`${gauche} ${operateur} ${droite}`));
+                alert(eval(`${gauche} ${operateur} ${droite}`)); // eval fonction mathémathique réalisant le calcul.
                 console.log(eval(`${gauche} ${operateur} ${droite}`));
             });
         });
