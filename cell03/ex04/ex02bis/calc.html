@@ -28,26 +28,26 @@
             align-items: center;
         }
     </style>
-<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script>
-        $(document).ready(function() {
-            setInterval(() => {
-                alert("Please, use me...")
-            }, 30000);
 
-            $("#submit").off("click").on("click", function() {
-                const left = $("#left").val();
-                const right = $("#right").val();
-                const operator = $("#operator").val();
-                if (left < 0 || right < 0) {
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+            setInterval(() => {
+                alert("Please, Use Me...")
+            }, 30000) // temps en ms
+            let submit = document.getElementById("submit");
+            submit.addEventListener("click", function() {
+                const gauche = document.getElementById("gauche").value;
+                const droite = document.getElementById("droite").value;
+                const operateur = document.getElementById("operateur").value;
+                if (gauche < 0 || droite < 0 ) {
                     return alert("Error :(");
                 }
-                if ((operator === "/" || operator === "%") && right === "0") {
+                if ((operateur === "/" || operateur === "%") && droite === "0") {
                     alert("It’s over 9000!");
                     return console.log("It’s over 9000!");
                 }
-                alert(eval(`${left} ${operator} ${right}`));
-                console.log(eval(`${left} ${operator} ${right}`));
+                alert(eval(`${gauche} ${operateur} ${droite}`));
+                console.log(eval(`${gauche} ${operateur} ${droite}`));
             });
         });
 </script>

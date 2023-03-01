@@ -18,48 +18,48 @@
             margin-top: 20%;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script>
-        let baloon = document.getElementById("baloon");
-        baloon.style.backgroundColor = "red";
-        baloon.addEventListener("click", function() {
-            changeColor(baloon);
-            baloon.style.height = `${baloon.clientHeight + 10}px`;
-            if (baloon.style.height >= "420px") {
-                baloon.style.height = "200px";
+        $("#baloon").css("background-color", "red");
+
+        $("#baloon").off("click").on("click", function() {
+            changeColor();
+            $("#baloon").css("height", "+=10px");
+            if ($("#baloon").height() >= 420) {
+                $("#baloon").height(200);
             }
         });
+        $("#baloon").mouseenter(function() {
+            if (!$("#baloon").height()) return;
+            if ($("#baloon").height() <= 200) return;
+            reverseChangeColor();
+            $("#baloon").css("height", "-=5px");
+        });
 
-        baloon.addEventListener("mouseenter", function() {
-            if (!baloon.style.height) return;
-            if (baloon.style.height <= "200px") return;
-            reverseChangeColor(baloon);
-            baloon.style.height = `${baloon.clientHeight - 5}px`;
-        })
-
-        function changeColor(element) {
-            switch (element.style.backgroundColor) {
-                case "red":
-                    element.style.backgroundColor = "green";
+        function changeColor() {
+            switch ($("#baloon").css("background-color")) {
+                case "rgb(255, 0, 0)":
+                    $("#baloon").css("background-color", "green");
                     break;
-                case "green":
-                    element.style.backgroundColor = "blue";
+                case "rgb(0, 128, 0)":
+                    $("#baloon").css("background-color", "blue");
                     break;
-                case "blue":
-                    element.style.backgroundColor = "red";
+                case "rgb(0, 0, 255)":
+                    $("#baloon").css("background-color", "red");
                     break;
             }
         }
 
-        function reverseChangeColor(element) {
-            switch (element.style.backgroundColor) {
-                case "red":
-                    element.style.backgroundColor = "blue";
+        function reverseChangeColor() {
+            switch ($("#baloon").css("background-color")) {
+                case "rgb(255, 0, 0)":
+                    $("#baloon").css("background-color", "blue");
                     break;
-                case "green":
-                    element.style.backgroundColor = "red";
+                case "rgb(0, 128, 0)":
+                    $("#baloon").css("background-color", "red");
                     break;
-                case "blue":
-                    element.style.backgroundColor = "green";
+                case "rgb(0, 0, 255)":
+                    $("#baloon").css("background-color", "green");
                     break;
             }
         }
