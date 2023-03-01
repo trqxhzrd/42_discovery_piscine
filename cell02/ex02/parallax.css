@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.parallax {
+    min-height: 2000px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax1{
+    background-image: url("https://img.freepik.com/photos-gratuite/jetee-au-bord-lac-hallstatt-autriche_181624-44201.jpg");
+}
+
+.parallax2{
+    background-image: url("https://i.pinimg.com/736x/00/37/ca/0037ca07998f679a2aa9b3e16ea50057.jpg");
+}
+
+.txt {
+    color: red;
+
+}
+
+.black{
+    height: 2000px;
+    background-color: black;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 50px 20px;
+    display: flex;
+    color: gold;
+    justify-content: flex-end;
+}
